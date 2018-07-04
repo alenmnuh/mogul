@@ -8,15 +8,15 @@ get_header(); ?>
 		the_archive_description( '<div class="taxonomy-description">', '</div>' );
 	?>
 	
-		<div class="blog-content">
+		<div class="blog__content">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					<a href="<?php the_permalink() ?>"><h2 class="archive-post-title"><?php the_title() ?></h2></a>
-					<hr class="post-hr"/>
-					<div class="post-content">
+					<a href="<?php the_permalink() ?>"><h2 class="post__title"><?php the_title() ?></h2></a>
+					<hr class="post__hr"/>
+					<div class="post__content">
 						<?php the_content(); ?>
 					</div>
 

@@ -2,9 +2,11 @@
 
 	$(document).ready(function(){
 
-		var $mainBox = $('.blog-content');
+		var $mainBox = $('.blog__content');
 		
 		$('.widget_categories a').click(function(e) {
+
+			console.log('vgbhjkl');
 
 			e.preventDefault();
 			$mainBox.html('');

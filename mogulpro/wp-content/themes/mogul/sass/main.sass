@@ -1,0 +1,1152 @@
+body *
+	font-family: 'futura_ltlight'
+
+.portfolio__tab:hover, .burger-icon, .button_loadmore, .portfolio__tab:hover
+	cursor: pointer
+
+a:focus, a:active, a:hover
+	color: black
+
+*:focus
+	outline-color: white
+
+button, img
+	outline: none
+
+hr
+	max-width: none
+
+=transition($time)
+	-webkit-transition: all $time ease-in-out
+	-moz-transition: all $time ease-in-out
+	-ms-transition: all $time ease-in-out
+	-o-transition: all $time ease-in-out
+	transition: all $time ease-in-out
+
+=transform
+	position: absolute
+	top: 50% 
+	left: 50% 
+	-moz-transform: translate(-50%, -50%) 
+	-ms-transform: translate(-50%, -50%) 
+	-webkit-transform: translate(-50%, -50%) 
+	-o-transform: translate(-50%, -50%) 
+	transform: translate(-50%, -50%)
+
+=color-fs($color, $font-size)
+	color: $color
+	font-size: $font-size
+
+=color-fs-ta($color, $font-size, $text-align)
+	color: $color
+	font-size: $font-size
+	text-align: $text-align
+
+=color-fs-lh($color, $font-size, $line-height)
+	color: $color
+	font-size: $font-size
+	line-height: $line-height
+
+=color-fs-lh-ta($color, $font-size, $line-height, $text-align)
+	color: $color
+	font-size: $font-size
+	line-height: $line-height
+	text-align: $text-align
+
+=w-h($width, $height)
+	width: $width
+	height: $height
+
+
+
+$grey: #4d4f50
+$dark-grey: #282828
+
+/***************************************   START HOME PAGE   ********************************/
+
+.header
+	&__column
+		height: 78px
+		position: relative
+
+	.row
+		padding: 6px 0
+
+	&__wrapper
+		width: auto
+
+		&.column:last-child:not(:first-child)
+			float: left
+
+	&__back-image
+		height: auto
+		background-size: cover
+		background-position: 50% 50%
+		position: relative
+
+		&_home
+			height: 35vw
+			background-size: cover
+			background-position: 50% 50%
+			position: relative
+
+	&__image_center
+		width: 60%
+		+transform
+
+	&__image_right
+		float: right
+		margin-top: 1%
+
+.logo
+	width: auto
+	margin-top: 13px
+	z-index: 1
+	position: relative
+
+.mobile-window
+	.main-nav
+		display: none
+		
+		// li
+	.menu-item
+		display: block
+		text-align: center
+
+.main-nav
+	margin: 21px 0px
+	display: block
+
+	ul
+		margin: 0
+
+	li
+		display: inline-block
+		padding: 0 30px 0 0
+
+	a
+		text-transform: uppercase
+		padding-bottom: 6px
+		font-family: Arial
+		+color-fs-ta(#878484, 14px, center)
+		letter-spacing: 1.05px
+		text-decoration: none
+		+transition(.3s)
+
+		&:hover
+			-webkit-box-shadow: inset 0 -4px #878484
+			box-shadow: inset 0 -2px #878484
+
+.burger-icon
+	display: none
+	color: #000000
+	position: absolute
+	right: 3%
+	top: 21%
+
+/************   START SECTION ABOUT   ************/
+
+.about
+	text-align: center
+	padding-bottom: 3.6%
+
+	&__title
+		+color-fs(#000, 41px)
+		margin: 6% auto		
+
+	&__text
+		+color-fs-lh($grey, 22px, 1.6)
+
+		&_first
+			margin-bottom: 4%
+
+
+		&_second 
+			margin: 5% auto 4%
+
+	&__image
+		outline: 1px solid #000
+
+		&_first		
+			border: 46px solid #fff
+			height: 63vw
+
+		&_second
+			border: 38px solid #fff
+
+	&__position
+		margin-top: 3.9%
+
+	&__h2
+		+color-fs-lh-ta($grey, 26px, 1.5, center)
+		margin-bottom: 0
+
+/************   END SECTION ABOUT   ************/
+
+/************   START FOOTER   ************/
+
+.footer
+	background-color: $dark-grey
+	float: left
+	width: 100%
+	padding: 30px 0
+
+	&__sign-up
+		border-right: 1px solid white
+		padding: 34px 0 0 0
+
+
+	&__contacts
+		border-right: 1px solid white
+		padding: 34px 0 28px
+
+		.fa
+			color: white
+			margin-right: 10px
+
+		.medium-4
+			padding: 0
+
+		.column
+			text-align: center
+
+	&__social
+		padding: 34px 0 0 0
+
+		.fa 
+			color: black
+			+transform
+
+	&__title
+		+color-fs-ta(#fff, 24px, center)
+		letter-spacing: 1.2px
+		font-weight: bold
+		margin-bottom: 52px
+
+	&__p
+		+color-fs-lh-ta(#fff, 16px, 25px, center)
+		width: 240px
+		margin: 0 auto
+
+		&:nth-of-type(2)
+			margin-bottom: 63px
+
+	&__span
+		+color-fs(#fff, 16px)
+
+	div.wpcf7
+		width: 66%
+		margin: 60px auto 0
+
+	&__social-icons
+		text-align: center
+		margin-top: 46px
+
+	&__wrapper-icon
+		margin-right: 12px
+		+w-h(53px, 53px)
+		background: white
+		border-radius: 50%
+		display: inline-block
+		position: relative
+		+transition(.4s)
+
+		&:hover
+			background-color: #9a9fa0
+
+/************   END FOOTER   ************/
+
+/***************************************   END HOME PAGE   ********************************/
+
+/***************************************   START CONTACT PAGE   ********************************/
+
+.form
+	position: relative
+	width: 65%
+
+	&.row
+		margin: 0 auto
+
+	&__title
+		+color-fs($grey, 24px)
+
+	&__button_submit
+		background-image: url(./../images/submit-button.png)
+		+w-h(121px, 121px)
+		margin: 0 auto
+		display: block
+		position: relative
+
+		&:after
+			content: ""
+			+w-h(100%, 100%)
+			position: absolute
+			top: -2px
+			left: -2px
+			border-radius: 50%
+			+transition(0.3s)
+
+		&:hover:after
+			transform: scale(1)
+			box-shadow: 10px 0 20px rgba(0, 0, 0, 0.19), 6px 0 6px rgba(0, 0, 0, 0.23)
+
+
+.tabbed
+	position: relative
+
+	ul.tabbed__tabs
+		margin: 0 0 6% 0;
+		border: 0
+		text-align: center
+		background: transparent
+
+	&__li
+		display: inline-block
+
+		&:first-child
+			display: none
+
+	div.t2, div.t3, div.t4
+		display: none
+
+.contact
+	.small-12
+		padding: 0
+
+	&__h2
+		+color-fs-ta($dark-grey, 48px, center)
+		margin: 6% 0
+
+.contact input, .leave-review input, .booking input, textarea
+	background-color: #f4f5f4
+	border: 0
+
+.contact textarea, .leave-review textarea, .booking textarea
+	margin-bottom: 45px
+
+.contact .wpcf7-form-control-wrap,
+.leave-review .wpcf7-form-control-wrap,
+.booking .wpcf7-form-control-wrap
+	width: 73%
+
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing
+	border: 2px solid $grey
+
+span.wpcf7-not-valid-tip
+	color: #ce3333
+
+.button-form
+	+transition(.3s)
+
+	&:hover
+		-o-transform: scale(1) rotate(20deg)
+		-ms-transform: scale(1) rotate(20deg)
+		-moz-transform: scale(1) rotate(20deg)
+		-webkit-transform: scale(1) rotate(20deg)
+		transform: scale(1) rotate(20deg)
+		+transition(.3s)
+
+		.button-image 
+			+transition(.3s)
+	
+	&__image
+		+w-h(100px, 100px)
+
+/***************************************   END CONTACT PAGE   ********************************/
+
+/***************************************   START REVIEWS PAGE   ********************************/
+
+.reviews__title
+	+color-fs-ta($dark-grey, 48px, center)
+	margin: 5% 0
+
+.reviews
+	.row 
+		max-width: 80%
+
+		.review 
+			padding: 0
+
+		&.expanded
+			max-width: none
+
+	&__hr
+		margin: 5% 0
+
+.review
+	&:nth-child(even) 
+		float: right
+
+	&__text
+		+color-fs-lh-ta($grey, 25px, 1.5, center)
+
+	&__text strong, &__span
+		font-size: 31px
+		font-weight: 400
+
+	&__author
+		width: 80%
+		margin: 0 auto
+
+	&__span:nth-child(2)
+		float: right
+
+.button_review
+	display: block
+	text-align: center
+	margin: 10px 0 3%
+
+.visit
+	&__title
+		+color-fs-ta($dark-grey, 30px, center)
+		border-top: 1px solid #d4d8d8
+		border-bottom: 1px solid #d4d8d8
+		padding: 28px 0
+		width: 641px
+
+	&__social-icons.row
+		margin: 3.5% auto 5.3%
+		display: table
+
+	&__sites
+		padding-left: 0
+		text-align: center
+		padding-right: 26px
+		height: 68px
+		line-height: 68px
+
+		&:last-child
+			border: 0
+			margin-right: 0
+			padding-right: 0
+
+		&-img
+			height: 3vw
+
+/***************************************   END REVIEWS PAGE   ********************************/
+
+/***************************************   START LEAVE A REVIEW PAGE   ********************************/
+
+.leave-review__title, .booking__title
+	+color-fs-ta($dark-grey, 48px, center)
+	margin: 5% 0
+
+/***************************************   START LEAVE A REVIEW PAGE   ********************************/
+
+/***************************************   START BLOG PAGE   ********************************/
+
+.blog
+	padding-top: 11%
+
+	&__content
+		width: 67%
+		margin: 0 0 0 8%
+		padding-right: 7%
+		overflow-y: scroll
+		height: 175vh
+		text-align: center
+		float: left
+
+		a:first-of-type
+			.post__title 
+				position: absolute
+				margin-top: -5%
+				left: 38%
+				-moz-transform: translate(-50%, -50%) 
+				-ms-transform: translate(-50%, -50%) 
+				-webkit-transform: translate(-50%, -50%) 
+				-o-transform: translate(-50%, -50%) 
+				transform: translate(-50%, -50%)
+
+			hr
+				display: block
+				width: 59%
+				color: #d4d8d8
+				height: 1px
+				position: absolute
+				margin-top: -2%
+				left: 38%
+				-moz-transform: translate(-50%, -50%)
+				-ms-transform: translate(-50%, -50%)
+				-webkit-transform: translate(-50%, -50%)
+				-o-transform: translate(-50%, -50%)
+				transform: translate(-50%, -50%)
+	
+.single-post
+	padding: 0
+
+	&__content 
+		height: auto
+
+.post
+
+	&__title
+		+color-fs(#000, 40px)
+		margin-top: 7.8%
+		display: block
+		width: 100%
+
+	&__hr
+		width: 59%
+
+	&__content
+		color:  #4d4f50
+		font-size: 22px
+		border-top: 1px solid #d4d8d8
+		padding-top: 3.5%
+		margin-top: 3.5%
+
+		&:first-of-type
+			border: 0
+			padding: 0
+			margin: 0
+
+h1.post__title 
+	margin: 0
+
+h2.post__title:hover 
+	font-weight: bold
+
+.button_loadmore
+	margin: 2em auto
+	width: 200px
+	background-color: #ddd
+	border-radius: 2px
+	display: block
+	text-align: center
+	font-size: 15px
+	font-weight: bold
+	letter-spacing: 3px
+	text-transform: uppercase
+	padding: 10px 0
+	+transition(.2s)
+
+	&:hover
+		background-color: #767676
+		color: #fff
+
+// post-navigation
+
+.nav-previous
+	float: left
+	margin: 2em 0
+
+	.post-nav__subtitle
+		text-align: left
+
+	.post-nav__icon
+		float: left
+		padding-right: 10px
+
+.nav-next
+	float: right
+	margin: 2em 0
+
+	.post-nav__subtitle
+		text-align: right
+	
+	.post-nav__icon
+		padding-left: 10px
+
+.post-nav__title
+	color: black
+	padding-bottom: 6px
+
+.post-nav__subtitle
+	color: #767676
+	display: block
+	font-weight: bold
+	letter-spacing: 0.1818em
+	margin-bottom: 1em
+	text-transform: uppercase
+
+.nav-previous:hover .nav-title,
+.nav-next:hover .nav-title
+	border-bottom: 2px solid black
+
+// sidebar
+
+.sidebar
+	float: right
+	width: 20%
+
+	.widget-title
+		border-top: 1px solid #d4d8d8
+		border-bottom: 1px solid #d4d8d8
+		display: inline-block
+		+color-fs(#000, 24px)
+		text-transform: uppercase
+		padding: 22px 10px
+		margin: 42px 0
+
+	li:first-child .widget-title
+		margin-top: 0
+	
+	> li
+		list-style-type: none
+
+	li ul li
+		margin-bottom: 10px
+
+		a
+			font-size: 18px
+			text-align: left
+			color: black
+
+			&:hover
+				font-weight: bold
+
+//archive-page
+.archive-page .nav-links
+	display: -webkit-inline-box
+	display: -moz-inline-box
+	display: -ms-inline-flexbox
+	display: -webkit-inline-flex
+	display: inline-flex
+
+.pagination .current
+	background: #b4c2c6
+
+/***************************************   END BLOG PAGE   ********************************/
+
+/***************************************   START SERVICES PAGE   ********************************/
+
+.services
+
+	&__title
+		+color-fs-ta($dark-grey, 48px, center)
+		letter-spacing: 1.13px
+		margin: 3% 0 2%
+
+	&__categories
+		display: table
+
+	&__tab
+
+		&.column
+			display: inline-block
+			padding: 0
+			width: auto
+
+		&-title
+			border-right: 1px solid black;
+			padding: 0 48px;
+			color: #282828;
+			font-size: 24px;
+			margin: 0;
+
+			&:hover
+				font-weight: bold
+
+	&__tab.column:last-of-type .services__tab-title
+		border: 0
+		padding-right: 0
+
+	&__tab.column:first-of-type .services__tab-title
+		padding-left: 0
+
+	&__main
+		width: 100%
+
+		.column
+			display: inline-block
+			padding: 0
+			float: none
+			+color-fs($dark-grey, 20px)
+			margin: 3% 0
+
+		.row
+			margin: 0
+			padding: 0
+			text-align: center
+
+		.column:last-child:not(:first-child)
+			float: none
+
+	&__h3, &__span
+		letter-spacing: 4.8px
+		font-size: 24px
+
+	&__hr
+		width: auto
+		margin: 3.5% auto
+
+	&__block
+		max-width: 80%
+
+	&__h2
+		+color-fs-ta($dark-grey, 24px, center)
+		margin-top: 3%
+		letter-spacing: 4.8px
+
+	&__h2_example
+		margin: 4.2% 0 6% 0
+
+	&__example
+		margin-bottom: 5%
+
+	&__example-title
+		+color-fs($dark-grey, 24px)
+		letter-spacing: 4.8px
+		line-height: 2
+		margin: 0
+
+.main-services .column
+	width: auto
+
+/***************************************   END SERVICES PAGE   ********************************/
+
+/***************************************   START PORTFOLIO PAGE   ********************************/
+
+.portfolio
+	&__title
+		+color-fs-ta($dark-grey, 60px, center)
+		letter-spacing: 1.41px
+		margin: 5.2% 0 6.1%
+
+	&__categories
+		display: table
+
+	&__hr
+		max-width: 95%
+		margin: 3.4% auto 2.3%
+
+	&__main
+		width: 100%
+
+		.column
+			width: 19%
+			display: inline-block
+			margin: 0
+			padding: 0
+			float: none
+			margin-bottom: 22px
+		
+		.row
+			margin: 0
+			padding: 0
+			text-align: center
+
+	&__tab
+		&.column
+			display: inline-block
+			padding: 0
+			width: auto
+
+		&-title
+			border-right: 1px solid black
+			padding: 0 48px
+			color:  #282828
+			font-size: 24px
+			margin: 0
+
+			&:hover
+				font-weight: bold
+
+
+	&__image
+		height: 21vw
+		width: auto
+
+	&__tab.column:first-of-type .portfolio__tab-title
+		padding-left: 0
+
+	&__tab.column:last-of-type .portfolio__tab-title
+		border: 0
+		padding-right: 0
+
+.gallery
+	max-width: 80%
+
+.fancybox
+	&-slide--image .fancybox-close-small
+		top: -29px
+		right: -12px
+
+	&-close-small:focus:after
+		outline: none
+
+/***************************************   END PORTFOLIO PAGE   ********************************/
+
+@media only screen and (min-width: 641px)
+	.main-services .column
+		width: 42%
+
+	.services__example .column:nth-child(even)
+		text-align: right
+
+	.services__example .column:last-child
+		float: right
+
+	.portfolio__tab-title
+		letter-spacing: 4.8px
+
+	.services__hr
+		width: 62%
+
+@media only screen and (max-width: 1715px)
+	.footer__contacts .column
+		width: 100%
+
+@media only screen and (max-width: 1364px)
+	.about__image_first
+		height: 53vw
+
+	.footer__wrapper-icon
+		margin-right: 12px
+		height: 30px
+		width: 30px
+
+	.review
+		&__text
+			font-size: 20px
+
+		&__author
+			width: 100%
+
+		&__text strong, &__span
+			font-size: 25px
+
+	.visit__sites
+		margin-right: 26px
+
+@media only screen and (max-width: 1024px)
+	.logo
+		margin-top: 0
+
+	.custom-logo
+		height: 120px
+		width: 120px
+
+	.main-nav
+		position: absolute
+		right: 50px
+		z-index: 1
+		top: -5px
+
+	.mobile-window
+		.main-nav li
+			text-align: right 
+
+			a
+				color: black
+				font-weight: bold
+
+	.burger-icon
+		display: inline-block
+
+	.footer
+		padding: 0 0 30px 0
+
+		&__title
+			margin-bottom: 20px
+			margin-top: 20px
+
+		div.wpcf7
+			margin-top: 30px
+
+			input, p
+				margin-bottom: 0px
+
+		&__p:nth-of-type(2)
+			margin-bottom: 27px
+
+		&__social
+			padding: 0
+
+	.about__title,
+	.reviews__title,
+	.services__title,
+	.portfolio__title,
+	.blog__content a:first-of-type .post__title,
+	.contact__h2,
+	.leave-review__title,
+	.booking__title
+		font-size: 28px
+
+	.post__title
+		font-size: 24px
+
+	.about__text_first,
+	.about__text_second,
+	.review__text,
+	.post__content,
+	.form__title,
+	.visit__title,
+	.about__h2,
+	.review__span
+		font-size: 17px
+
+	.about__image_first,
+	.about__image_second 
+		border: 24px solid #fff
+
+	.visit__sites
+		padding: 0
+		margin: 0
+
+		&-img
+			height: 4vw
+
+	.portfolio
+		&__tab-title
+			padding: 0 24px
+
+		&__main .column
+			width: 24%
+
+		&__image
+			height: 25vw
+
+	.services
+		.main .column
+			padding: 0 5%
+
+		&-block
+			max-width: 90%
+
+		&__example
+			width: 90%
+
+			&-title
+				font-size: 17px
+
+	.blog__content
+		width: auto
+		float: none
+
+		a:first-of-type .post__title, a:first-of-type hr
+			left: 50%
+
+	.sidebar
+		text-align: center
+		display: table
+		float: none
+		width: 90%
+		margin: 0 auto
+
+		> li
+			display: table-cell
+			width: 36%
+
+		li
+			list-style-type: none
+
+		li ul
+			margin: 0
+
+	.tabbed__li
+		margin: 0 3%
+
+	.review__text strong
+		font-size: 21px
+	
+	.visit__title
+		width: 624px;
+@media only screen and (max-width: 640px)
+
+	.logo
+		margin: 0
+		padding: 0
+
+	.custom-logo
+		height: 65px
+		width: 65px
+
+	.main-nav
+		right: 40px
+
+	.burger-icon
+		right: 15px
+
+	.about__image_first
+		height: 85vw
+
+	.about__image_second
+		height: 65vw
+
+	.about__image_first,
+	.about__image_second 
+		border: 0
+
+	.reviews__hr:first-child
+		margin: 0 0 5% 0
+
+	.visit__title
+		font-size: 19px
+		width: auto
+		padding: 18px 0
+
+		&-img
+			height: 5vw
+
+	.services
+		.main .column
+			font-size: 17px
+
+		&__example .column
+			text-align: center
+
+		&__h3, &__span
+			font-size: 19px
+
+	.portfolio
+		&__tab-title
+			padding: 0 10px
+			font-size: 15px
+
+		&__main .column
+			width: 47%
+
+		&__image
+			height: 52vw
+
+	.gallery
+		max-width: 90%
+
+	.sidebar > li
+		display: block
+		width: 100%
+
+	.form
+		width: 90%
+
+	.contact textarea
+		margin-bottom: 6%
+
+	.contact textarea, .leave-review textarea, .booking textarea
+		height: 30vw
+
+	.button_review
+		margin: 10px 0 25px
+
+	.button__image_review
+		height: 28vw
+
+	.blog
+		padding-top: 84px
+
+		&__content
+			a:first-of-type
+				.post__title
+					margin-top: -47px
+
+				hr
+					margin-top: -15px
+
+	.nav-next,
+	.nav-previous
+		float: none
+		display: table
+		margin: 2em auto
+
+	.sidebar
+		margin: 25px auto
+
+		.widget-title
+			font-size: 17px
+			padding: 10px 10px
+			margin: 20px 0
+
+		li ul li a
+			font-size: 16px
+
+@media only screen and (min-width: 1025px)
+	.header-image
+		height: 20vw
+
+	.footer
+		&__sign-up
+			width: 30%
+
+		&__contacts
+			width: 37%
+
+		&__social
+			width: 33%
+
+	.visit__sites
+		width: auto
+		border-right: 1px solid black
+
+	.main-services .column
+		width: 32%
+
+	.services__example
+		width: 782px
+
+	.tabbed__tabs
+		position: absolute
+		top: 32%
+		left: calc(75% + -1px)
+		+w-h(254px, 192px)
+
+	.contact input, .booking input, .leave-review input,
+	.contact textarea, .booking textarea, .leave-review textarea
+		margin-bottom: 45px
+
+	.button-image
+		+w-h(9vw, 9vw)
+
+	.button-form:hover .button-image
+		+w-h(8.5vw, 8.5vw)
+		+transition(.3s)
+
+	.li2
+		position: absolute
+		left: 0
+
+	.li3
+		position: absolute
+		top: calc(43% - -84px)
+		left: 49%
+
+	.contact .form,
+	.leave-review .form,
+	.booking .form
+		width: 55%
+		left: -7vw
+
+	.contact .wpcf7-form-control-wrap,
+	.leave-review .wpcf7-form-control-wrap,
+	.booking .wpcf7-form-control-wrap
+		float: right
+
+	.form__button_submit
+		position: absolute
+		right: -25%
+		top: 55%
+
+@media only screen and (min-width: 1365px)
+	.social .fa
+		font-size: 37px
+
+	.reviews .row .review
+		max-width: 44%
+
+	.visit__sites
+		padding-right: 36px
+		margin-right: 36px
+
+	.services
+		.main .column
+			font-size: 24px
+			margin: 6% 0
+
+		&__title
+			margin: 6% 0 5%
+
+		&__h2
+			margin-top: 6%
+
+	.contact .form,
+	.leave-review .form,
+	.booking .form
+		width: 41%
+		left: -5vw
+
+	.tabbed__tabs
+		position: absolute
+		left: calc(75% + -76px)
+		+w-h(390px, 350px)

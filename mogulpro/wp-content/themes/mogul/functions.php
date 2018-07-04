@@ -12,6 +12,8 @@ function mogul_scripts () {
 
 
 	wp_enqueue_script ( 'jquery');
+	wp_enqueue_script ( 'ajax-portfolio', get_template_directory_uri() .  '/js/ajax-portfolio.js', array('jquery') );
+	wp_enqueue_script ( 'ajax-services', get_template_directory_uri() .  '/js/ajax-services.js', array('jquery') );
 	wp_enqueue_script( 'true_loadmore',  get_template_directory_uri() . '/js/loadmore.js', array('jquery') );
 	wp_enqueue_script ( 'matchHeight', get_template_directory_uri() .  '/js/jquery.matchHeight.js' );
 	wp_enqueue_script ( 'foundation-js', get_template_directory_uri() .  '/js/foundation.min.js' );
@@ -86,7 +88,7 @@ add_filter( 'get_custom_logo', 'custom_link_logo' );
 function custom_link_logo() {
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
-            esc_url( 'localhost/mogul/booking' ),
+            esc_url( get_home_url( null, 'booking/' ) ),
             wp_get_attachment_image( $custom_logo_id, 'full', false, array(
                 'class'    => 'custom-logo',
             ) )
@@ -157,3 +159,76 @@ function my_assets() {
 	));
 
 }
+
+
+//Add custom post type review
+function review_post_type(){
+	$labels = array (
+		'name' => 'Reviews',
+		'singular_name' => 'Review',
+		'add_new' => 'Add review',
+		'all_items' => 'All reviews',
+		'add_new_item' => 'Add New review',
+		'edit_item' => 'Edit review',
+		'new_item' => 'New review',
+		'view_item' => 'View review',
+		'search_item' => 'Search review',
+		'not_found' => 'No review found',
+		'not_found_in_trash' => 'No review found In Trash',
+		'parent_item_colon' => 'Parent review'
+	);
+
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => false,
+		'publicly_queryable' => true,
+		'rewrite' => true,
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'editor',
+			'thumbnail',
+			'revisions'
+		),
+		'menu_position' => 5,
+		'exclude_from_search' => false
+	);
+
+	register_post_type('review', $args);
+}
+
+add_action('init', 'review_post_type');
+
+
+
+
+
+
+
+
+
+///////////////////////
+
+
+
+//ajax lesson - delete this
+// add_action('wp_ajax_get_field', 'func_get_field');
+// add_action('wp_ajax_nopriv_get_field', 'func_get_field');
+
+// function func_get_field(){
+// 	$page = empty($_GET['page']) ? 'not found' : esc_attr($_GET['page']);
+// 	$field = empty($_GET['field']) ? 'not found' : esc_attr($_GET['field']);
+// 	echo get_post_meta( $page, $field, true );
+// 	wp_die();
+// }
+
+// add_action( 'wp_enqueue_scripts', 'my_assets2' );
+// function my_assets2() {
+
+// 	wp_enqueue_script ( 'ajax', get_template_directory_uri() .  '/js/ajax.js', array('jquery') ); //lesson ajax - delete
+// 	wp_localize_script ( 'ajax', 'red', array (
+// 		'ajaxurl' => get_home_url( null, 'postmeta' )
+// 	)); //delete
+
+// }
