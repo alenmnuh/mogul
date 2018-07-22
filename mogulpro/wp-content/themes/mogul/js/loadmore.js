@@ -23,7 +23,6 @@ jQuery(function($){
 					$('#true_loadmore').remove();
 				}
 			}
-
 		});
 
 	});

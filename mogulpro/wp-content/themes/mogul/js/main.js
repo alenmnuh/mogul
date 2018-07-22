@@ -11,7 +11,9 @@
 
 	$(document).ready(function(){
 
+		//match height
 		$('footer > .column').matchHeight();
+		$('.review__text').matchHeight();
 		
 		//gallery
 		$('[data-fancybox]').fancybox({
@@ -43,29 +45,12 @@
 		   fade: false
 		});
 
-		//contact page tabs
-		// setting the tabs hide and show, setting the current tab
-
-
-		// $('div.tabbed div.tabbed__tab-content').hide();
-		// $('div.t1').show();
-		// $('div.tabbed t1.tabbed__tab').addClass('tab-current');
-
-		// // tabs
-		// $('.tabbed__tab').click(function(){
-		// 	console.log('vghjkl;');
-		// 	var thisClass = this.className.slice(0,2);
-		// 	$('div.tabbed div.tabbed__tab-content').hide();
-		// 	$('div.' + thisClass).show();
-		// 	$('div.tabbed .tabbed__tab').removeClass('tab-current');
-		// 	$(this).addClass('tab-current');
-		// });
-
+		
+		//contact tabs
 		$('.tabbed__tab-content').hide();
 		$('div.t1').show();
 		$('.tabbed .tabbed__tabs li.t1 a').addClass('tab-current');
 
-		// tabs
 		$('.tabbed ul li a').click(function(){
 			var thisClass = this.className.slice(0,2);
 			$('.tabbed__tab-content').hide();
@@ -74,6 +59,13 @@
 			$(this).addClass('tab-current');
 		});
 
+
+		//ajax logo
+		$('.logo').click(function(){
+			$.get(myajaxurl.homeurl, function(data) {
+       			$('.logo__title').toggle();
+			})	
+		})
 	});
 
 	$(window).resize( function() {

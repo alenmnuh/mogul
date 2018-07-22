@@ -1,0 +1,80 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: July 12, 2018 5:45 pm
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.2.38
+WORDPRESS:	4.9.7
+PHP INFO:	7.2.1 | SAPI: apache2handler
+SERVER:		Apache/2.4.29 (Win32) OpenSSL/1.1.0g PHP/7.2.1 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 2048M (128M default) 
+MEMORY STACK: 18MB 
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   MYSQLDUMP
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Is Supported 
+FILTERED: [] 
+RESPONSE: Ran from C:/xampp/mysql/bin/mysqldump.exe 
+TABLES: total:13 | filtered:0 | create:13 
+SQL CREATED: 20180511_mogul_556c26d01ac7ab688783180712174446_database.sql 
+SQL FILE SIZE: 1.06MB (1110656) 
+SQL FILE TIME: 2018-07-12 17:45:49 
+SQL RUNTIME: 1.03 sec. 
+
+******************************************************************************** 
+ARCHIVE (ZIP): 
+******************************************************************************** 
+ARCHIVE DIR:  C:/xampp/htdocs/mogul 
+ARCHIVE FILE: 20180511_mogul_556c26d01ac7ab688783180712174446_archive.zip 
+FILTERS: *OFF* 
+DIRS:
+	not set 
+FILES:
+	not set 
+EXTS:  not set 
+---------------------------------------- 
+COMPRESSING 
+SIZE:	59.03MB 
+STATS:	Dirs 1,063 | Files 7,521 
+SQL ADDED: 20180511_mogul_556c26d01ac7ab688783180712174446_database.sql 
+ZipArchive Object
+(
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 8584
+    [filename] => C:\xampp\htdocs\mogul\wp-snapshots\tmp\20180511_mogul_556c26d01ac7ab688783180712174446_archive.zip
+    [comment] => 
+)
+ 
+COMPRESSION RESULT: '1' 
+COMPRESSED SIZE: 21.97MB 
+ARCHIVE RUNTIME: 39.47 sec. 
+MEMORY STACK: 20MB 
+
+******************************************************************************** 
+MAKE INSTALLER: 
+******************************************************************************** 
+Build Start 
+Build Finished 
+Preping for use 
+PACK SIZE:  
+Template parsed with new data 
+Complete [C:/xampp/htdocs/mogul/wp-snapshots/tmp/20180511_mogul_556c26d01ac7ab688783180712174446_installer.php] 
+Added to archive 
+
+******************************************************************************** 
+INTEGRITY CHECKS: 
+******************************************************************************** 
+SQL File: 1.06MB 
+Installer File: 445.85KB 
+Archive File: 21.97MB  
+
+********************************************************************************
+RECORD ID:[4]
+TOTAL PROCESS RUNTIME: 41.48 sec.
+PEAK PHP MEMORY USED: 22MB
+DONE PROCESSING => 20180511_mogul July 12, 2018 5:46 pm
+ 

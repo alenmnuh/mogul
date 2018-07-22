@@ -3,7 +3,7 @@
 get_header(); ?>
 
 <section class="single-post">
-	<div class="single-post__content blog-content">
+	<div class="single-post__content blog__content">
 
 		<div class="row" style="text-align: center;">
 

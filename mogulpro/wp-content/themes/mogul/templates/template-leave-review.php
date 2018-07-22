@@ -8,7 +8,13 @@ get_header();?>
 	
 	<div class="row expanded">
 		<h1 class="leave-review__title"><?php the_title() ?></h1>
-		<?php echo do_shortcode( '[contact-form-7 id="62" title="Review Form"]' ); ?>
+
+		<?php if ( is_user_logged_in() ) :
+			$shortcode = get_post_meta($post->ID,'form_shortcode_review',true);
+			echo do_shortcode($shortcode);
+		else : ?>
+			<h2 style="text-align: center">Please log in</h2>
+		<?php endif ?>
 	</div>
 
 </section>

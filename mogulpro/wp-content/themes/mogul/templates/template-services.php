@@ -43,26 +43,6 @@ get_header();?>
 	   </div>
 	</div>
 
-
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<?php if ($service_example_title = get_field('service_example_title')): ?>
 	   <h2 class="services__h2 service__h2_example"><?php echo $service_example_title;?></h2>
 	<?php endif ?>

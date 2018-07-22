@@ -6,8 +6,6 @@
 		
 		$('.widget_categories a').click(function(e) {
 
-			console.log('vgbhjkl');
-
 			e.preventDefault();
 			$mainBox.html('');
 
@@ -19,12 +17,12 @@
 			history.pushState({page_title: titleCat}, titleCat, linkCat);
 
 			ajaxCat(linkCat);
-		});
 
-		window.addEventListener("popstate", function (event) {
-			document.title = event.state.page_title;
-			ajaxCat(location.href);
-		}, false);
+			window.addEventListener("popstate", function (event) {
+				document.title = event.state.page_title;
+				ajaxCat(location.href);
+			}, false);
+		});
 
 		function ajaxCat(linkCat) {
 

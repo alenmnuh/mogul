@@ -306,7 +306,7 @@ hr {
   background-image: url(./../images/submit-button.png);
   width: 121px;
   height: 121px;
-  margin: 0 auto;
+  margin: 20px auto 0;
   display: block;
   position: relative;
 }
@@ -438,6 +438,7 @@ span.wpcf7-not-valid-tip {
 
 .reviews .row .review {
   padding: 0;
+  margin-bottom: 30px;
 }
 
 .reviews .row.expanded {
@@ -466,7 +467,7 @@ span.wpcf7-not-valid-tip {
 
 .review__author {
   width: 80%;
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
 
 .review__span:nth-child(2) {
@@ -564,7 +565,7 @@ span.wpcf7-not-valid-tip {
 }
 
 .single-post {
-  padding: 0;
+  padding-top: 5%;
 }
 
 .single-post__content {
@@ -869,6 +870,10 @@ h2.post__title:hover {
   text-align: center;
 }
 
+.portfolio__main .column:last-child:not(:first-child) {
+  float: none;
+}
+
 .portfolio__tab.column {
   display: inline-block;
   padding: 0;
@@ -915,6 +920,26 @@ h2.post__title:hover {
 }
 
 /***************************************   END PORTFOLIO PAGE   ********************************/
+/***************************************   START PRODUCTS PAGE   ********************************/
+.products .row {
+  text-align: center;
+}
+
+.products .column:last-child:not(:first-child) {
+  float: none;
+}
+
+.product {
+  text-align: center;
+  display: inline-block;
+}
+
+.product__name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/***************************************   END PRODUCTS PAGE   ********************************/
 @media only screen and (min-width: 641px) {
   .main-services .column {
     width: 42%;
@@ -1048,6 +1073,9 @@ h2.post__title:hover {
   .portfolio__image {
     height: 25vw;
   }
+  .services__tab-title {
+    padding: 0 24px;
+  }
   .services .main .column {
     padding: 0 5%;
   }
@@ -1139,6 +1167,10 @@ h2.post__title:hover {
   }
   .services__h3, .services__span {
     font-size: 19px;
+  }
+  .services__tab-title {
+    padding: 0 10px;
+    font-size: 15px;
   }
   .portfolio__tab-title {
     padding: 0 10px;

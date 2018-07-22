@@ -10,49 +10,60 @@ get_header();?>
 	   <h1 class="column reviews__title"><?php echo $reviews_title; ?></h1>
 	<?php endif; ?>
 
-	<?php if( have_rows('reviews') ): ?>
 
-	   <div class="row">
-
-	   <?php while( have_rows('reviews') ): the_row(); ?>
-	      <div class="column review small-12 medium-5">
-
-	      	<hr class="reviews__hr" />
-	         
-	         <?php if ($review_text = get_sub_field('review_text')): ?>
-	            <div class="review__text"><?php echo $review_text;?></div>
-	         <?php endif ?>
-
-	         <div class="review__author">	
-
-					<?php if ($review_author = get_sub_field('review_author')): ?>
-					   <span class="review__span"><?php echo $review_author;?></span>
-					<?php endif ?>
+	<?php 
+	   $args = array(
+	      'post_type' => 'review',
+	      'order' => 'ASC',
+	      'posts_per_page' => '2'
+	   );
+	?>
 
 
-					<?php if ($location_of_review_author = get_sub_field('location_of_review_author')): ?>
-					   <span class="review__span"><?php echo $location_of_review_author;?></span>
-					<?php endif ?>
+	<?php $the_query = new WP_Query( $args );?>
 
-	         </div>
+	<?php if ($the_query->have_posts() ) : ?>
+			
+			<div class="row">
+				
+	      <?php while ( $the_query->have_posts() ) :  $the_query->the_post();?>
+	      	<div class="column review small-12 medium-5">
 
-	         <hr />
+	      	
+	    			<?php if ($review_post = get_field('review_post')): ?>
+						   <span class="review__span"><?php echo $review_post;?></span>
+						<?php endif ?>
 
-	      </div>
+		      		<hr class="reviews__hr" />
+		      		<?php if ($inquiry = get_field('inquiry')): ?>
+		            	<div class="review__text"><?php echo $inquiry;?></div>
+		         	<?php endif ?>
 
-	   <?php endwhile; ?>
+		         	<div class="review__author">	
 
+						<span class="review__span"><?php the_title() ?></span>
+
+						<?php if ($user_location = get_field('user_location')): ?>
+						   <span class="review__span"><?php echo $user_location;?></span>
+						<?php endif ?>
+
+		         	</div>
+
+	         		<hr />	         	
+	      	</div>
+	      <?php endwhile; ?>
 	   </div>
-
-	<?php endif; ?> 
-
-    <script>
-        var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
-        var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
-        var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
-        var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
-    </script>
-	<div id="true_loadmore" class="button_loadmore">View More</div>
+	   <?php if (  $the_query->max_num_pages > 1 ) : ?>
+				<script>
+				var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+				var true_posts = '<?php echo serialize($the_query->query_vars); ?>';
+				var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+				var max_pages = '<?php echo $the_query->max_num_pages; ?>';
+				</script>
+				<button id="true_loadmore1" class="button_loadmore">View More</button>
+			<?php endif; ?>
+	<?php endif; ?>
+	<?php wp_reset_postdata(); ?>
 
 
 	<a class="button_review"  href="<?php if ($page_link_of_this_button = get_field('page_link_of_this_button')):

@@ -13,9 +13,11 @@
 	<header class="header row expanded">
 	   <div class="column header__column">
 	   	<div class="row expanded">
-	   		<div class="column logo">
-	   		   <?php the_custom_logo(); ?>
+	   		<div class="column logo custom-logo">
+	   		   <?php echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' ); ?>		   
 	   		</div>
+
+	   		<div class="logo__title" style="display: none"><?php echo get_bloginfo('name') ?></div>
 	   		
 	   		<div class="column header__wrapper">
 	   		   <nav class="main-nav">
@@ -35,6 +37,7 @@
 	   <?php $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id(get_option('page_for_posts')), 'full' );?>
 
 	   <div style="background-image: url(<?php if (is_home()): ?> <?php echo $backgroundImg[0]; ?>
+	   											<?php elseif (!is_page_template('single-product.php')): ?> <?php echo $backgroundImg[0] ?>
 	   											<?php else: ?> <?php the_post_thumbnail_url(); ?>
 	   											<?php endif ?>)"
 	   						<?php if (is_front_page()): ?> class="header__back-image_home column"
